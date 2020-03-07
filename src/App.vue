@@ -23,7 +23,7 @@
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item v-for="(child, i) in item.children" :key="i" :to="child.link" link>
+            <v-list-item v-for="(child, i) in item.children" :key="i" :to="child.link" class="children-link" link>
               <v-list-item-action v-if="child.icon">
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-item-action>
@@ -56,12 +56,16 @@
         label="Search"
         class="hidden-sm-and-down search-input"
       />
-      <v-btn icon>
+      <v-btn class="account" icon>
         <v-icon>mdi-account-box</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn class="jira" icon href="https://jira.viseven.com/">
         <v-icon>mdi-jira</v-icon>
       </v-btn>
+      <v-btn class="github" icon href="https://github.com/ssm1le/aem-web-team">
+        <v-icon>mdi-github-circle</v-icon>
+      </v-btn>
+      <v-switch class="theme-switch" v-model="$vuetify.theme.dark" hide-details inset></v-switch>
     </v-app-bar>
 
     <v-content>
@@ -95,18 +99,18 @@ export default {
         text: "Projects",
         model: false,
         children: [
-          { icon: "mdi-arrow-right", text: "Tisma", link: "/about" },
-          { icon: "mdi-arrow-right", text: "BiogenPro", link: "" },
-          { icon: "mdi-arrow-right", text: "NeuroExpert", link: "" },
-          { icon: "mdi-arrow-right", text: "Tisma", link: "" },
-          { icon: "mdi-arrow-right", text: "BiogenPro", link: "" },
-          { icon: "mdi-arrow-right", text: "NeuroExpert", link: "" },
-          { icon: "mdi-arrow-right", text: "Tisma", link: "" },
-          { icon: "mdi-arrow-right", text: "BiogenPro", link: "" },
-          { icon: "mdi-arrow-right", text: "NeuroExpert", link: "" },
-          { icon: "mdi-arrow-right", text: "Tisma", link: "" },
-          { icon: "mdi-arrow-right", text: "BiogenPro", link: "" },
-          { icon: "mdi-arrow-right", text: "NeuroExpert", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "/about" },
+          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
+          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
           { icon: "mdi-plus", text: "New project" }
         ]
       },
@@ -142,10 +146,16 @@ export default {
     a {
       text-decoration: none;
     }
+    .children-link {
+      padding: 0 16px 0 32px;
+    }
   }
   .v-app-bar {
     .search-input {
       padding-right: 20px;
+    }
+    .theme-switch {
+      padding-left: 20px;
     }
   }
 }
