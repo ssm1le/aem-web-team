@@ -23,7 +23,14 @@
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item v-for="(child, i) in item.children" :key="i" :to="child.link" class="children-link" link>
+            <v-list-item
+              v-for="(child, i) in item.children"
+              :key="i"
+              :to="child.link"
+              :href="child.href"
+              class="children-link"
+              link
+            >
               <v-list-item-action v-if="child.icon">
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-item-action>
@@ -32,7 +39,7 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
-          <v-list-item v-else :key="item.text" :to="item.link" link>
+          <v-list-item v-else :key="item.text" :to="item.link" :href="item.href" link>
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
@@ -69,8 +76,7 @@
     </v-app-bar>
 
     <v-content>
-      <v-breadcrumbs></v-breadcrumbs>
-      <v-container class="fill-height" fluid>
+      <v-container fluid>
         <router-view />
       </v-container>
     </v-content>
@@ -91,7 +97,7 @@ export default {
     drawer: null,
     items: [
       { icon: "mdi-home", text: "Homeage", link: "/" },
-      { icon: "mdi-history", text: "Frequently contacted", link: "" },
+      { icon: "mdi-file-document", text: "Documentation", link: "" },
       { icon: "mdi-content-copy", text: "Duplicates", link: "" },
       {
         icon: "mdi-chevron-up",
@@ -99,43 +105,97 @@ export default {
         text: "Projects",
         model: false,
         children: [
-          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "/about" },
-          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "Tisma", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "BiogenPro", link: "" },
-          { icon: "mdi-note-outline mdi-18px", text: "NeuroExpert", link: "" },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "Tisma",
+            link: "/projects#tisma"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "BiogenPro",
+            link: "/projects#biogenpro"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "NeuroExpert",
+            link: "/projects#neuroexpert"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
+          {
+            icon: "mdi-note-outline mdi-18px",
+            text: "project",
+            link: "/projects#project"
+          },
           { icon: "mdi-plus", text: "New project" }
         ]
       },
       {
         icon: "mdi-chevron-up",
         "icon-alt": "mdi-chevron-down",
-        text: "More",
+        text: "Tools",
         model: false,
         children: [
-          { text: "Import" },
-          { text: "Export" },
-          { text: "Print" },
-          { text: "Undo changes" },
-          { text: "Other contacts" }
+          { text: "CP-author", href: "https://cp-author.biogen-support.com/" },
+          {
+            text: "BCP-author",
+            href: "https://bcp-author.biogen-support.com/"
+          },
+          {
+            text: "CP crx/de",
+            href: "https://cp-author.biogen-support.com/crx/de/index.jsp#"
+          },
+          {
+            text: "BCP crx/de",
+            href: "https://bcp-author.biogen-support.com/crx/de/index.jsp#"
+          }
         ]
       },
       { icon: "mdi-settings", text: "Settings" },
       { icon: "mdi-message", text: "Send feedback" },
       { icon: "mdi-help-circle", text: "Help" },
-      { icon: "mdi-cellphone-link", text: "App downloads" },
-      { icon: "mdi-keyboard", text: "Go to the old version" }
     ]
   }),
   created() {
-    this.$vuetify.theme.dark = true;
+    // this.$vuetify.theme.dark = true;
   }
 };
 </script>
