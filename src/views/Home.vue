@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <v-jumbotron color="grey lighten-2">
       <v-container fill-height>
         <v-layout align-center>
           <v-flex>
@@ -14,7 +13,6 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-jumbotron>
   </div>
 </template>
 
@@ -25,5 +23,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

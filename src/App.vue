@@ -200,7 +200,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #vApp {
   .v-navigation-drawer {
     a {
