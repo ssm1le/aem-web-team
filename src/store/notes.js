@@ -3,19 +3,19 @@ export default {
         notes: [
             {
                 date: "14.03.2020",
-                link: "path to file",
+                link: "path to file1",
                 author: "Nadya",
                 deployed: false
             },
             {
                 date: "15.03.2020",
-                link: "path to file",
+                link: "path to file2",
                 author: "Nadya",
                 deployed: false
             },
             {
                 date: "16.03.2020",
-                link: "path to file",
+                link: "path to file3",
                 author: "Radik",
                 deployed: false
             }

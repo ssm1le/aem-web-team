@@ -51,7 +51,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left hide-on-scroll>
+    <v-app-bar app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>DCF aem team</v-toolbar-title>
       <v-spacer />

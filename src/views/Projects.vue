@@ -3,30 +3,45 @@
     <NewReleaseNote></NewReleaseNote>
 
     <h2 id="tisma">#Tisma</h2>
-    <v-list v-for="item in allNotes" :key="item.link">
-      <v-list-item @click="method">
+    <v-list class="note-list">
+      <v-list-item
+        class="note-item"
+        v-for="item in allNotes"
+        :key="item.link"
+      >
         <Note :data="item"></Note>
       </v-list-item>
     </v-list>
     <h2 id="biogenpro">#Biogen Pro</h2>
-    <v-list v-for="item in allNotes" :key="item.link">
-      <v-list-item @click="method">
+    <v-list class="note-list">
+      <v-list-item
+        class="note-item"
+        v-for="item in allNotes"
+        :key="item.link"
+      >
         <Note :data="item"></Note>
       </v-list-item>
     </v-list>
     <h2 id="neuroexpert">#NeuroExpert</h2>
-    <v-list v-for="item in allNotes" :key="item.link">
-      <v-list-item @click="method">
+    <v-list class="note-list">
+      <v-list-item
+        class="note-item"
+        v-for="item in allNotes"
+        :key="item.link"
+      >
         <Note :data="item"></Note>
       </v-list-item>
     </v-list>
     <h2 id="project">#Project</h2>
-    <v-list v-for="item in allNotes" :key="item.link">
-      <v-list-item @click="method">
+    <v-list class="note-list">
+      <v-list-item
+        class="note-item"
+        v-for="item in allNotes"
+        :key="item.link"
+      >
         <Note :data="item"></Note>
       </v-list-item>
     </v-list>
-
   </div>
 </template>
 
@@ -63,4 +78,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.note-item {
+  .row {
+    border-bottom: 1px solid #fff;
+  }
+  &:last-of-type {
+    .row {
+      border: none;
+    }
+  }
+}
 </style>
