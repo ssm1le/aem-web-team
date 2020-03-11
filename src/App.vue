@@ -2,7 +2,7 @@
   <v-app id="vApp">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <template v-for="item in items">
+        <template v-for="item in menuItems">
           <v-row v-if="item.heading" :key="item.heading" align="center">
             <v-col cols="6">
               <v-subheader v-if="item.heading">{{ item.heading }}</v-subheader>
@@ -88,6 +88,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   props: {
     source: String
@@ -95,108 +96,11 @@ export default {
   data: () => ({
     dialog: false,
     drawer: null,
-    items: [
-      { icon: "mdi-home", text: "Homeage", link: "/" },
-      { icon: "mdi-file-document", text: "Documentation", link: "" },
-      { icon: "mdi-content-copy", text: "Duplicates", link: "" },
-      {
-        icon: "mdi-chevron-up",
-        "icon-alt": "mdi-chevron-down",
-        text: "Projects",
-        model: false,
-        children: [
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "Tisma",
-            link: "/projects#tisma"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "BiogenPro",
-            link: "/projects#biogenpro"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "NeuroExpert",
-            link: "/projects#neuroexpert"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          {
-            icon: "mdi-note-outline mdi-18px",
-            text: "project",
-            link: "/projects#project"
-          },
-          { icon: "mdi-plus", text: "New project" }
-        ]
-      },
-      {
-        icon: "mdi-chevron-up",
-        "icon-alt": "mdi-chevron-down",
-        text: "Tools",
-        model: false,
-        children: [
-          { text: "CP-author", href: "https://cp-author.biogen-support.com/" },
-          {
-            text: "BCP-author",
-            href: "https://bcp-author.biogen-support.com/"
-          },
-          {
-            text: "CP crx/de",
-            href: "https://cp-author.biogen-support.com/crx/de/index.jsp#"
-          },
-          {
-            text: "BCP crx/de",
-            href: "https://bcp-author.biogen-support.com/crx/de/index.jsp#"
-          }
-        ]
-      },
-      { icon: "mdi-settings", text: "Settings" },
-      { icon: "mdi-message", text: "Send feedback" },
-      { icon: "mdi-help-circle", text: "Help" },
-    ]
   }),
-  created() {
-    // this.$vuetify.theme.dark = true;
-  }
+  computed: {
+    ...mapGetters(["menuItems"])
+  },
+  created() {}
 };
 </script>
 
